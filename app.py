@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import bs4 as bs
 import re
 import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 
