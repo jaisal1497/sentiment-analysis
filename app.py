@@ -24,7 +24,7 @@ def home():
         conn = sql.connect('database33.db')
         print ("Opened database successfully")
 
-        conn.execute('CREATE TABLE reviews (movie_review TEXT PRIMARY KEY, result TEXT)')
+        conn.execute('CREATE TABLE IF NOT EXISTS reviews (movie_review TEXT PRIMARY KEY, result TEXT)')
         print ("Table created successfully")
         conn.close()
     return render_template('index.html')
