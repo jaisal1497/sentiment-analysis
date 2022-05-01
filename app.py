@@ -5,12 +5,6 @@ import re
 import nltk
 from nltk.corpus import stopwords
 
-conn = sql.connect('database33.db')
-print ("Opened database successfully")
-
-conn.execute('CREATE TABLE reviews (movie_review TEXT PRIMARY KEY, result TEXT)')
-print ("Table created successfully")
-conn.close()
 
 from flask import Flask, render_template, request
 import pickle
@@ -24,6 +18,13 @@ vectorizer=pickle.load(open('vectorizer.pkl','rb'))
 
 @app.route("/")
 def home():
+    if conn is None:
+        conn = sql.connect('database33.db')
+        print ("Opened database successfully")
+
+        conn.execute('CREATE TABLE reviews (movie_review TEXT PRIMARY KEY, result TEXT)')
+        print ("Table created successfully")
+        conn.close()
     return render_template('index.html')
 
 
