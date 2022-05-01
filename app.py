@@ -15,9 +15,10 @@ app = Flask(__name__)
 #change the model name and figure it out
 model = pickle.load(open('model.pkl', 'rb'))
 vectorizer=pickle.load(open('vectorizer.pkl','rb'))
-
+conn = None
 @app.route("/")
 def home():
+    global conn
     if conn is None:
         conn = sql.connect('database33.db')
         print ("Opened database successfully")
