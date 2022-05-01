@@ -1,0 +1,21 @@
+
+        {% extends "base.html" %}
+        {% block content %}
+		<h4 class="display-4" style="text-align: center"><strong>All Records are listed below:</strong></h4><br>
+        <table border = 1>
+         <thead>
+            <td>Movie Review</td>
+             <td>Result</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["movie_review"]}}</td>
+               <td>{{row["Result"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/">Back</a>
+        {% endblock %}
+

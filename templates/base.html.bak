@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>IMDb Visual</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #e3ebfe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+</style>
+    
+<body style="background-color:#ffcccc">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#b3e0ff">
+      <a class="navbar-brand" href="/">Sentiment Analysis</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+		  <a class="nav-item nav-link" href="/result">Results</a>
+		  <a class="nav-item nav-link" href="/result">All Data</a>
+        </div>
+      </div>
+    </nav>
+
+    
+</head>
+   
+
+    {% block content %}{% endblock %}   
+
+    
+</body>
+</html>

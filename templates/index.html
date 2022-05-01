@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    ul {
+          display: table;
+          margin: 0 auto;
+        }
+    p {
+        text-align: center;
+    }
+	.container .jumbotron {
+    border-radius: 6px ;
+}
+
+</style>
+
+<script>
+    function change(value){
+          document.getElementById("show_form").value= value;
+          }
+</script>
+<div class="container">
+    <div class="jumbotron bg-info text-black" style="background:transparent !important;border-radius: 6px ;"> 
+        <div class="row">
+            <div class="col text-center">
+                <form action="{{ url_for('results') }}" method="POST" role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="show_form" name="movierev" placeholder="Type the review here!"><br>
+                        <button type="submit" class="btn btn-success">Add Review</button>
+                    </div>
+                </form>  
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron bg-info text-black" style="background:transparent !important;border-radius: 6px ;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 border-right border-left">
+                    <h3 class="display-4" style="text-align: center"><strong>How to Use</strong></h3><br>
+                    <p>Type the review of a Movie /TV Show and click the submit button. Our model will try to do a sentiment analysis on your movie review and give out the result as Positive or Negative</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
